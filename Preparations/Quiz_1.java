@@ -1,5 +1,6 @@
 //Given an array of integers taken with java call, write a code that prints the number
 //if the array repeats a number "exactly" twice somewhere, and prints "No numbers are repeated exactly twice" otherwise.
+package Preparations;
 
 public class Quiz_1 {
 
