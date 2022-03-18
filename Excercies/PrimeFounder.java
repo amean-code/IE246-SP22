@@ -36,18 +36,15 @@ public class PrimeFounder {
 
                     // if input is divisible by any previous value
                     if(input % i == 0 ){
+                         // not prime
                         System.out.println("Not Prime!");
                         isPrime = false;
                         break;
-                    }
-                        // not prime
-
-                    // otherwise
-
-                        // Prime
+                    }       
                 }
-
+                // otherwise
                 if(isPrime){
+                    // Prime
                     System.out.println("Prime!");
                 }
             }   
