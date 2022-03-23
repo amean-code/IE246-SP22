@@ -1,4 +1,4 @@
-
+package Excercies;
 
 public class MinimumFinder {
     
