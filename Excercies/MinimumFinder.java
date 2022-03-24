@@ -16,7 +16,6 @@ public class MinimumFinder {
 
         // define an arbitrary minValue and index
         int minValue = Integer.MAX_VALUE; // sonsuz
-        int minIndex = 0; // 0
 
         // define a pin boolean array
         boolean[] pin = new boolean[values.length]; // false false false

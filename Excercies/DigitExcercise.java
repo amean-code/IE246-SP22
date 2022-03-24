@@ -23,6 +23,7 @@ public class DigitExcercise {
         System.out.println("Please type an integer between 0-999: ");
         int number = scan.nextInt();
 
+
         // check if between 0-999
         if(!(number < 1000 && number >= 0)){
             System.out.println("Please type an integer between 0-999: ");
@@ -43,6 +44,8 @@ public class DigitExcercise {
             sumDigits += currentDigit;
         }
         System.out.println("Sum of the digits: "+ sumDigits);
+
+        scan.close();
 
     }
     
