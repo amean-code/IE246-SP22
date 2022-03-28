@@ -5,7 +5,7 @@ public class Question2 {
 		// TODO Auto-generated method stub
 		printDesign();
 	}
-	
+		
 	// Method printDesign
 	public static void printDesign() {
 		

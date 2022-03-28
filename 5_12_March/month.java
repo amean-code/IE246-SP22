@@ -7,7 +7,7 @@ public class month {
         System.out.println(months(number));
     
     }
-
+	
     public static String months(int num) {
         // return the name of the month
         switch (num) {
