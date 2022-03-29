@@ -1,3 +1,4 @@
+package ECommerceProject;
 
 public class Customer extends User{
 

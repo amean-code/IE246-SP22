@@ -1,3 +1,4 @@
+package ECommerceProject;
 
 public class Admin extends User{
 
