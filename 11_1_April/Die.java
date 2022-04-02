@@ -29,6 +29,6 @@ public class Die {
         
         int outcome = die.roll(); // outcome becomes 1,2,3,4,5, or 6.
 
-        int count = die.experiment(5,10000);x // count becomes how many 5's are observed among 10000 die rolls.
+        int count = die.experiment(5,10000); // count becomes how many 5's are observed among 10000 die rolls.
     }
 }
