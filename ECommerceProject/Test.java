@@ -1,5 +1,4 @@
 package ECommerceProject;
-
 public class Test {
 
 	public static void main(String[] args) {
@@ -25,10 +24,12 @@ public class Test {
 //		User newUser1 = User.newUser();
 //		System.out.println(newUser1);
 //		
-		// Test 5 - Create an Admin 
-		Admin admin1 = new Admin("eminkartci","123456","Emin","Kartci","Admin");
-		System.out.println(admin1);
+		// // Test 5 - Create an Admin 
+		// Admin admin1 = new Admin("eminkartci","123456","Emin","Kartci","Admin");
+		// System.out.println(admin1);
+
 		
+
 	}
 
 }

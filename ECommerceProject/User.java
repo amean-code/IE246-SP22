@@ -1,19 +1,33 @@
 package ECommerceProject;
 
+import java.io.*;
 import java.util.Random;
 import java.util.Scanner;
 
 public class User {
+
+	// MAIN
+	public static void main(String[] args) {
+		// // Test 6 - Save user as CSV File
+		// User u = new User("eminkartci","123456");
+		// u.saveUserCSV();
+
+		// Tet 7 - Read User from CSV File
+		User u = User.getUserCSV("eminkartci", "123456");
+		System.out.println(u);
+	}
 	
 	// CONSTANTS
 	int ID_LENGTH = 15;
+	String USER_PATH = "./db/user/";
 	
 	// attributes
 	private String id,username,password,role;
 	private String name,surname;
 	private int age,TCKN;
 	
-	
+	// STATICS
+
 	
 	// constructor
 	public User(String username,String password) {
@@ -70,6 +84,36 @@ public class User {
 		return content;
 	}
 	
+	public void saveUserCSV(){
+
+		try{
+
+			// Define a BF to write a File
+			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(USER_PATH+"/"+this.username+".csv")));
+
+			// Write the CSV Content
+			bw.write(getCSVContent());
+
+			// Close the file
+			bw.close();
+
+		}catch(IOException error){
+			System.out.println("The user cannot be saved as CSV File!! : => "+ error.toString());
+		}
+		
+	}
+
+	public String getCSVContent(){
+
+		String content = "User Name,Password\n"; // Titles
+
+		content += this.username + "," + this.password + "\n";
+		 
+
+		// Return content
+		return content;
+
+	}
 	
 	// Getter Setter
 	
@@ -93,6 +137,37 @@ public class User {
 		User newUser = new User(username,password);
 		
 		return newUser;
+	}
+
+	public static User getUserCSV(String username,String password){
+
+		User user;
+			
+		try{
+			// check if there is a user
+			BufferedReader br = new BufferedReader(new FileReader(new File("./db/user/"+username+".csv")));
+
+			// Read content
+			String titles = br.readLine();
+			String[] data = br.readLine().split(",");
+
+			if(data[1].equals(password)){
+				System.out.println("Welcome "+ username +"! ");
+				user = new User(data[0],data[1]);
+			}else{
+				System.out.println("username or password is incorrect!");
+				return null;
+			}
+			
+
+			// Return user
+			return user;
+
+		}catch(IOException e){
+			System.out.println("There is no such a user :> " + username);
+			return null;
+		}		
+
 	}
 
 }
