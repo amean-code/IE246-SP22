@@ -13,7 +13,7 @@ public class User {
 		// u.saveUserCSV();
 
 		// Tet 7 - Read User from CSV File
-		User u = User.getUserCSV("eminkartci", "123456");
+		User u = User.getUserCSV("kaganozturkoglu", "1");
 		System.out.println(u);
 	}
 	
