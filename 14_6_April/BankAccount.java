@@ -62,16 +62,19 @@ public class BankAccount {
             System.out.println("You don't have enough money.");
             return;
         }
+
+        // lets dedut 5 USD from the balance
+        this.balance -= 5;
+
         // if the account doesnt have enough money, transfer whatever money left,
         if (this.balance < amount) {
+            System.out.println("I can only transfer "+this.balance+" money.");
             // add the money to the x BankAccount
             x.balance += this.balance;
             // lets decrease the money from "this" bank account
             this.balance -= this.balance;
 
         } else {
-            // lets dedut 5 USD from the balance
-            this.balance -= 5;
             // lets decrease the money from "this" bank account
             this.balance -= amount;
             // add the money to the x BankAccount
