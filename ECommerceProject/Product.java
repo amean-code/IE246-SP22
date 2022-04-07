@@ -1,5 +1,3 @@
-
-
 public abstract class Product {
 
     // MAIN
@@ -8,15 +6,13 @@ public abstract class Product {
         Hamburger p = new Hamburger();
 
 
-
     }
 
     // Attributes
     int product_id;
     String title;
     double price,cost;
-
-    
+   
 }
 
 abstract class Food extends Product{

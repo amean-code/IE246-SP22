@@ -8,13 +8,13 @@ public class User {
 
 	// MAIN
 	public static void main(String[] args) {
-		// // Test 6 - Save user as CSV File
-		// User u = new User("eminkartci","123456");
-		// u.saveUserCSV();
+		// Test 6 - Save user as CSV File
+		User u = new User("eminkartci","123456");
+		u.saveUserCSV();
 
-		// Tet 7 - Read User from CSV File
-		User u = User.getUserCSV("kaganozturkoglu", "1");
-		System.out.println(u);
+		// // Tet 7 - Read User from CSV File
+		// User u = User.getUserCSV("kaganozturkoglu", "1");
+		// System.out.println(u);
 	}
 	
 	// CONSTANTS
@@ -89,7 +89,7 @@ public class User {
 		try{
 
 			// Define a BF to write a File
-			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(USER_PATH+"/"+this.username+".csv")));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(USER_PATH+"/"+this.username+".txt")));
 
 			// Write the CSV Content
 			bw.write(getCSVContent());
