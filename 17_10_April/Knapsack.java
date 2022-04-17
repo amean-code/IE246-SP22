@@ -7,7 +7,7 @@ public class Knapsack {
     static Random rand;
     static ArrayList<Box> boxes = new ArrayList<>();
     // lets have a variable called capacity
-    static int capacity = 40;
+    static int capacity = 50;
     static int count = 30;
 
     public static void main(String[] args) {
@@ -22,11 +22,15 @@ public class Knapsack {
     // lets create boxes with size //randomly generate values
     // lets give a box size between 1 and 10 and a value between 5 and 25
     public static void createRandomBoxes(int count) {
+
         rand = new Random();
+
         for (int i = 0; i < count; i++) {
+
             Box b = new Box(rand.nextInt(10) + 1, rand.nextInt(21) + 5, "BOX" + (i + 1));
             // lets put these boxes arraylist
             boxes.add(b);
+            
         }
 
     }
@@ -37,8 +41,10 @@ public class Knapsack {
     public static ArrayList<Box> solve(int capacity) {
         // create the boxes
         createRandomBoxes(count);
+
         ArrayList<Box> copyBoxes = new ArrayList<>();
         ArrayList<Box> bestBoxes = new ArrayList<>();
+
         copyBoxes = boxes;
         // find the bext boxes
         // the bext box is with maximum value and smallest size// trying to maximize
@@ -55,14 +61,14 @@ public class Knapsack {
                 }
             }
             // check the capacity
-            if (capacity - tempBox.size >= 0) {
+            if (capacity >= tempBox.size) {
                 // hold the tempBox value
                 // put the tempbox to bestBox array
                 bestBoxes.add(tempBox);
                 //update the capacity
                 capacity-=tempBox.size;
             } else {
-                return bestBoxes;
+                //return bestBoxes;
             }
             // remove the tempBox
             copyBoxes.remove(tempBox);
@@ -84,6 +90,7 @@ public class Knapsack {
         return sum;
 
     }
+
     //a method to print the boxes names to the console
     public static void printToConsole(ArrayList<Box> mikail) {
         //iterating over boxes
