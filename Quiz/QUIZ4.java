@@ -17,7 +17,7 @@ public class QUIZ4{
         //trying to access the value
         /*
         int number = pointScored.get(player3);
-        System.out.println(number2);
+        System.out.println(number);
         */
         //we cannot access the value because it is not defined in the keyset of the hashmap
         
