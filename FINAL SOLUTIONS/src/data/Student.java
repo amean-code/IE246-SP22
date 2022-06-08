@@ -7,9 +7,15 @@ public class Student {
 	public String name;
 	public HashMap<Course, GRADE> coursesTaken;
 	private double GPA;
+	//iterate over hashmaps values and sum them together
 	public void computeGPA() {
-
+		double sum = 0;
+		for(GRADE x: coursesTaken.values()) {
+			sum+=returnGradeValue(x);
+		}
+		this.GPA=sum;
 	}
+	
 	public GRADE convertStringtoGrade (String gradeAsString) {
 		if(gradeAsString == "A")
 		{
@@ -56,4 +62,50 @@ public class Student {
 			return GRADE.F;
 		}
 	}
+	
+	public double returnGradeValue(GRADE a) {
+		if(a==GRADE.A) {
+			return 4;
+		}else if(a==GRADE.Aminus){
+			return 3.7;
+
+		}else if(a==GRADE.Bplus){
+			return 3.3;
+
+		}else if(a==GRADE.B){
+			return 3;
+
+		}
+		else if(a==GRADE.Bminus){
+			return 2.7;
+
+		}
+		else if(a==GRADE.Cplus){
+			return 2.3;
+
+		}
+		else if(a==GRADE.C){
+			return 2;
+
+		}else if(a==GRADE.Cminus){
+			return 1.7;
+
+		}else if(a==GRADE.Dplus){
+			return 1.3;
+
+		}else if(a==GRADE.D){
+			return 1;
+
+		}else if(a==GRADE.F){
+			return 0;
+		//if the value is null
+		}else if(a==null) {
+			return 0;
+		}
+		return 10000;
+
+		
+		
+	}
+	
 }

@@ -30,8 +30,24 @@ public class AdvancedComputations {
 		// We want this.randomCoverage to be the list of these students.
 	}
 	
+	//to find the heavylifter we need to iterate over the students and calculate the course credits
 	private Student findHeavyLifter() {
-		return null;
+			Student heavyLifter = new Student();
+			int currentMost=0;
+			for(Student x : students) {
+				int coursesum=0;
+				//I need to iterate over the courses 
+				for(Course taken : x.coursesTaken.keySet()) {
+					coursesum+= taken.creditHours;
+				}
+				//we need to control if our courseSum is bigger than currentMost
+				if(coursesum>currentMost) {
+					currentMost=coursesum;
+					//changing our student to x (who has the highest sum)
+					heavyLifter=x;
+				}
+			}
+		return heavyLifter;
 	}
 
 	private ArrayList<Student> findRandomCoverage() {
